@@ -19,26 +19,31 @@ describe('<service-grid> collections', () => {
           labels: ['footastic', 'bartastic'],
           name: 'Your Missing Piece',
           icon: 'pie_chart',
-          tagLine: "Just the service you've been waiting for",
+          tagline: "Just the service you've been waiting for",
         },
         {
           labels: ['baztastic'],
           name: 'New',
           icon: 'star',
-          tagLine: 'Latest services to join the platform',
+          tagline: 'Latest services to join the platform',
         },
       ];
     });
 
     await page.waitForChanges();
 
-    const collections = await page.findAll('service-grid >>> marketplace-results');
+    const collections = await page.findAll(
+      'service-grid >>> marketplace-collection service-category'
+    );
+
     expect(collections.length).toBe(2);
 
-    const missingPieceServices = await collections[0].findAll('service-card');
+    const missingPieceServices = await collections[0].findAll(
+      'marketplace-results >>> service-card'
+    );
     expect(missingPieceServices.length).toBe(2);
 
-    const newServices = await collections[1].findAll('service-card');
+    const newServices = await collections[1].findAll('marketplace-results >>> service-card');
     expect(newServices.length).toBe(1);
   });
 });

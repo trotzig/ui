@@ -28,10 +28,13 @@ export class ServiceGrid {
   componentDidUpdate() {
     if (this.scrollToCategory) {
       if (this.root.shadowRoot) {
-        const heading = this.root.shadowRoot.querySelector(`#category-${this.scrollToCategory}`);
+        const categories = this.root.shadowRoot.querySelector('sorted-categories');
+        if (categories && categories.shadowRoot) {
+          const heading = categories.shadowRoot.querySelector(`#category-${this.scrollToCategory}`);
 
-        if (heading) {
-          heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (heading) {
+            heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       }
 

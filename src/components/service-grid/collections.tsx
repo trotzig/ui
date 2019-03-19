@@ -14,7 +14,7 @@ export const Collections: FunctionalComponent<CollectionsProps> = () => {
               labels={c.labels.join(',')}
               name={c.name}
               icon={c.icon}
-              tagLine={c.tagLine}
+              tagline={c.tagline}
             />
           </div>
         ));
