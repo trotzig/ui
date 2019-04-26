@@ -37,6 +37,7 @@ slot:
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property        | Attribute        | Description                                                    | Type                  | Default            |
@@ -45,12 +46,14 @@ slot:
 | `linkFormat`    | `link-format`    | Link format structure, with `:resource` placeholder            | `string \| undefined` | `undefined`        |
 | `preserveEvent` | `preserve-event` | Should the JS event still fire, even if link-format is passed? | `boolean`             | `false`            |
 
+
 ## Events
 
 | Event                         | Description | Type                |
 | ----------------------------- | ----------- | ------------------- |
 | `manifold-resourceList-click` |             | `CustomEvent<void>` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

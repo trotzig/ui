@@ -1,11 +1,9 @@
-
 import { Component, Prop, State, Element } from '@stencil/core';
 import Tunnel from '../../data/connection';
 import { withAuth } from '../../utils/auth';
 import { Connection, connections } from '../../utils/connections';
 
 @Component({ tag: 'manifold-data-product-name' })
-
 export class ManifoldDataProductName {
   @Element() el: HTMLElement;
   /** _(hidden)_ Passed by `<manifold-connection>` */
@@ -18,8 +16,8 @@ export class ManifoldDataProductName {
     // Don’t return this promise to invoke the loading state
     fetch(`${this.connection.catalog}/products?label=${this.productLabel}`, withAuth())
       .then(response => response.json())
-      .then(data => {
-        this.product = { ...data[0] };
+      .then((products: Catalog.ExpandedProduct[]) => {
+        this.product = products[0]; // eslint-disable-line prefer-destructuring
       });
   }
 

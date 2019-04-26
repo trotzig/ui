@@ -78,7 +78,8 @@ export namespace Components {
     /**
     * URL-friendly slug (e.g. `"jawsdb-mysql"`)
     */
-    'productLabel': string;
+    'productLabel'?: string;
+    'resourceName'?: string;
   }
   interface ManifoldDataProductLogoAttributes extends StencilHTMLAttributes {
     /**
@@ -93,6 +94,7 @@ export namespace Components {
     * URL-friendly slug (e.g. `"jawsdb-mysql"`)
     */
     'productLabel'?: string;
+    'resourceName'?: string;
   }
 
   interface ManifoldDataProductName {
